@@ -24,7 +24,7 @@ for (var i = 0; i < data.length; i++) {
   else {
     inputTd = $("<td>").append(span);
   }
-  var button = $("<button>").text("edit").attr('data-index', i).addClass('edit-btn');
+  var button = $("<button>").text("edit").attr('data-index', i).addClass('edit-btn', "save-btn");
   var buttonTd = $("<td>").append(button);
   var tr = $("<tr>").append(date, inputTd, buttonTd);
   $("#calendar").append(tr);
@@ -61,14 +61,25 @@ $(document).on("click", '.edit-btn', function(){
 
   data[$(this).attr('data-index')].editing = !oldEditingValue;
   generateData();
+
+// button for saves revised text and into localStorage, figure how to put data into local storage. me implementing above to save
+
+$(document).on("click", ".edit-btn", function(){
+  var newEditingValue = data[$(this).attr("data-index")].editing;
+  var newData = localStorage.getItem("newData");
+  
+  data[$(this).attr("data-index")].editing = !newEditingValue;
+  localStorage.setItem("newData", newData);
+  });
+
+
 });
 
-// button for saves to 
 
 
-// figure how to put data into local storage.
-localStorage.setItem("inputSaved", data);
-console.log("inputSaved");
+
+
+
 
 // make a button enable input in table data
 // make button save information in local storage
