@@ -4,23 +4,44 @@
 
 // 1 create a field on the time block where user can place info blocks of hours 9 to 5
 //-- Create a list or table store timeblock, contain the time, input field (user can place note), hold button.
+var data = [{date: new Date(), todo: '', editing: false},]
+
+
 
 // dymnamicly add event container to the date container.
-var tr = $("<tr>");
-tr.addClass("");
-var date = $("<td>");
-var inputTd = $("<td>");
-var buttonTd = $("<td>");
-var input = $("<input>");
-var button = $("<button>");
+function generateData() {
+  $("#calendar").empty();
+for (var i = 0; i < data.length; i++) {
+  var todo = data[i];
+  var inEditingMode = todo.editing === true;
+  var date = $("<td>").text(todo.date.toDateString());
+  var input = $("<input>").attr("type", "text").val(todo.todo);
+  var span = $("<span>").attr('data-state', 'not-editing').text(todo.todo)
+  var inputTd;
+  if(inEditingMode) {
+    inputTd = $("<td>").append(input);
+  }
+  else {
+    inputTd = $("<td>").append(span);
+  }
+  var button = $("<button>").text("edit").attr('data-index', i).addClass('edit-btn');
+  var buttonTd = $("<td>").append(button);
+  var tr = $("<tr>").append(date, inputTd, buttonTd);
+  $("#calendar").append(tr);
+  
+}
+};
+
+generateData();
+//tr.addClass("");
 /* <input type="text"></input> */
-date.text("date");
-input.attr("type", "text");
-inputTd.append(input);
-button.text("what");
-buttonTd.append(button);
-tr.append(date, inputTd, buttonTd);
-$("#calendar").append(tr);
+//date.text("date");
+//input.attr("type", "text");
+//inputTd.append(input);
+//button.text("what");
+//buttonTd.append(button);
+//tr.append(date, inputTd, buttonTd);
+
 
 
 /* 
@@ -33,7 +54,22 @@ $("#calendar").append(tr);
           */
 // 2 have a button where user can edit info in timeblock then save information into localStorage.
 // click event button to enable editing. lets user type info in input field. when button clicked again saves to local storge.
-button.on("click") 
+$(document).on("click", '.edit-btn', function(){
+  console.log('editing working', $(this));
+  console.log('This is the record we want to update', data[$(this).attr('data-index')])
+  var oldEditingValue = data[$(this).attr('data-index')].editing;
+
+  data[$(this).attr('data-index')].editing = !oldEditingValue;
+  generateData();
+});
+
+// button for saves to 
+
+
+// figure how to put data into local storage.
+localStorage.setItem("inputSaved", data);
+console.log("inputSaved");
+
 // make a button enable input in table data
 // make button save information in local storage
 
