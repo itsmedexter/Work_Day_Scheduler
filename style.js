@@ -2,10 +2,18 @@
 // Id #CurrentDay
 // .date where new time blocks go        
 var currentDay = document.getElementById("currentDay");
-currentDay.innerHTML = moment().format("dddd MMM Do YY");
+currentDay.innerHTML = moment().format("dddd, MMMM D, YYYY");
 // 1 create a field on the time block where user can place info blocks of hours 9 to 5
 //-- Create a list or table store timeblock, contain the time, input field (user can place note), hold button.
-var data = [{ date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }, { date: new Date(), todo: '', editing: false }]
+var data = [{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false },
+{ date: new Date(), todo: '', editing: false }]
 
 
 
@@ -16,7 +24,7 @@ function generateData() {
     var todo = data[i];
     var inEditingMode = todo.editing === true;
     todo.todo = localStorage.getItem("newData" + i);
-    var date = $("<td>").text(todo.date.toDateString());
+    var date = $("<td>").addClass("time-block").text(todo.date.toDateString());
     var input = $("<input>").attr("type", "text").val(todo.todo).addClass("input" + i);
     var span = $("<span>").attr('data-state', 'not-editing').text(todo.todo)
     var inputTd;
@@ -31,8 +39,8 @@ function generateData() {
       button = $("<button>").text("edit").attr('data-index', i).addClass('edit-btn');
 
     }
-    var buttonTd = $("<td>").append(button);
-    var tr = $("<tr>").append(date, inputTd, buttonTd);
+    var buttonTd = $("<td>").append(button).addClass("saveBtn");
+    var tr = $("<tr>").addClass("future").append(date, inputTd, buttonTd);
     $("#calendar").append(tr);
 
   }
