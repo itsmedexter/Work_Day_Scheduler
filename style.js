@@ -14,7 +14,7 @@ var data = [{ date: new Date(), todo: '', editing: false },
 { date: new Date(), todo: '', editing: false },
 { date: new Date(), todo: '', editing: false },
 { date: new Date(), todo: '', editing: false }]
-
+// how to style dynamic timeblock with different colors? 
 
 
 // dymnamicly add event container to the date container.
@@ -24,19 +24,19 @@ function generateData() {
     var todo = data[i];
     var inEditingMode = todo.editing === true;
     todo.todo = localStorage.getItem("newData" + i);
-    var date = $("<td>").addClass("time-block").text(todo.date.toDateString());
+    var date = $("<td>").addClass("time-block").text(todo.date.toLocaleTimeString());
     var input = $("<input>").attr("type", "text").val(todo.todo).addClass("input" + i);
     var span = $("<span>").attr('data-state', 'not-editing').text(todo.todo)
     var inputTd;
     var button;
     if (inEditingMode) {
       inputTd = $("<td>").append(input);
-      button = $("<button>").text("save").attr('data-index', i).addClass("save-btn");
+      button = $("<button>").addClass("saveBtnS").text("save").attr('data-index', i).addClass("save-btn");
 
     }
     else {
       inputTd = $("<td>").append(span);
-      button = $("<button>").text("edit").attr('data-index', i).addClass('edit-btn');
+      button = $("<button>").addClass("saveBtnE").text("edit").attr('data-index', i).addClass('edit-btn');
 
     }
     var buttonTd = $("<td>").append(button).addClass("saveBtn");

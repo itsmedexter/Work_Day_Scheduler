@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: whitesmoke;
 }
 
 textarea{
@@ -15,7 +16,7 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: lightyellow;
+  background-color: whitesmoke;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -27,7 +28,8 @@ textarea{
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   background-color: green;
   width: 125px;
   color: white;
@@ -56,9 +58,9 @@ textarea{
 }
 
 .future {
-  background-color: #77dd77;
-  opacity: 75%;
+  background-color: #daf1da;
   color: black;
+  transition: all .3s ease-in-out;
 }
 
 .saveBtn {
@@ -74,3 +76,40 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.saveBtnE {
+  border: 0px;
+  /* border-left: 1px solid black; */
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+  width: 100px;
+  height: 50px;
+  transition: all .3s ease-in-out;
+
+}
+
+.saveBtnE:hover {
+background-color: rgb(92, 185, 206);
+width: 110px;
+height: 50px;
+}
+  .saveBtnS {
+    border: 0px;
+    /* border-left: 1px solid black; */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #06AED5;
+    color: white;
+    width: 100px;
+    height: 50px;
+    transition: all .3s ease-in-out;
+
+}
+
+.saveBtnS:hover {
+  background-color: rgb(92, 185, 206);
+  width: 110px;
+  height: 50px;
+  }
