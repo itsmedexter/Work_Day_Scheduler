@@ -23,14 +23,14 @@ Any web browser can access or view link, repository. Use source-code editor to v
 
 ## Deployed Link
 
-* [See Live Site](https://itsmedexter.github.io/unit05_homework/)
+* [See Live Site](https://itsmedexter.github.io/Work_Day_Scheduler/)
 
 
 ## Authors
 
 Dexter Valencia 
 
-- [Link to Portfolio Site](https://github.com/itsmedexter/unit05_homework)
+- [Link to Portfolio Site](https://github.com/itsmedexter/Work_Day_Scheduler)
 - [Link to Github](https://github.com/itsmedexter)
 - [Link to LinkedIn](https://www.linkedin.com/in/dextervalencia/)
 
