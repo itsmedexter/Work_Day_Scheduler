@@ -2,7 +2,7 @@
 
 Here is a Work Day Scheduler created in Jquery. Jquery is used to create new items in a blank html field with editable text input, saving text input to localStorage, and current date and time features. 
 
-# Questions that came about 
+# Questions that I didn't know at the time 
 
  1. How do you change a dynamic table data rows with a time frame, change rows with different colors? Create seven new variables and functions just changing the time?
  
