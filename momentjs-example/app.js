@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     // Static
+    // https://momentjs.com/
 
     // The first basic method of Moment.js is the moment() method. Use this to get today's info!
     console.log(moment());
