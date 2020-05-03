@@ -12,7 +12,7 @@ This var data is what the tutor helped me with, but I don't understand it. I thi
 
 ### Prerequisites
 
-Any web browser can access or view link, repository. Use source-code editor to view html javascript files.
+Any web browser can access or view link, repository. Use source-code editor such as VS Code to view html javascript files.
 
 ## Built With
 
